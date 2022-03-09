@@ -41,7 +41,7 @@
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item" *ngFor="let item of service.user.dependents" [routerLink]="['/student',item.id]">
-                            <img src="/assets/{{item.img}}" class="img-user-4 img-fluid">
+                            <img src="assets/{{item.img}}" class="img-user-4 img-fluid">
                             <span class="title">{{item.name}}</span>
                         </li>
 

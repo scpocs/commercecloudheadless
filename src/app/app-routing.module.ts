@@ -25,7 +25,7 @@ const routes: Routes = [
     loadChildren: () => StudentModule
   },
 
-  { path: '', redirectTo: 'start', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({
