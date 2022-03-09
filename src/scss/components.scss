@@ -1,0 +1,37 @@
+@import "components/card-window";
+@import "components/tags";
+@import "components/card-inputs";
+@import "components/sidebar-form";
+@import "components/card-highlight";
+@import "components/input-errors";
+@import "components/p-menubar";
+@import "components/p-sidebar";
+
+.btn {
+    i {
+        margin-right: 0.5em;
+    }
+}
+
+//
+
+.btn-default {
+    background-color: #768ea0 !important;
+    box-shadow: 3px 3px 15px 2px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #fff;
+}
+.card-default {
+    border: none;
+    box-shadow: 3px 3px 25px 2px rgb(0 0 0 / 10%);
+
+    .card-header {
+        background-color: #768ea0 !important;
+        color: #fff;
+        font-weight: 400;
+    }
+}
+
+///
+
+// .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {

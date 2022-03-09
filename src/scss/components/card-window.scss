@@ -1,0 +1,30 @@
+.card-window {
+    .card-header {
+        box-shadow: 0 0px 20px 0 rgb(1 15 38 / 20%);
+        // background: radial-gradient(ellipse farthest-side at right top, $color-bg-start 0%, $color-bg-end 100%)
+        //     no-repeat;
+        // background: var(--primary);
+        background-image: linear-gradient(to bottom, #fff, #d6dfe4);
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3em;
+
+        .title {
+            padding: 0.3rem 1rem;
+            // color: #fff;
+        }
+
+        .btn-group {
+            box-shadow: 0 0px 20px 0 rgb(1 15 38 / 20%);
+            .btn {
+                padding: 0.15rem 0.7rem;
+            }
+        }
+    }
+    box-shadow: 0 0px 30px 0 rgb(1 15 38 / 10%);
+
+    .badge {
+        display: inline;
+    }
+}

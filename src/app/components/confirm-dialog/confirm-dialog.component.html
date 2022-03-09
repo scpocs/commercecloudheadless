@@ -1,0 +1,25 @@
+<div @dialogOpenClose *ngIf="showConfirmDialog" class="confirm-dialog" >
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+            <img src="{{ icon }}" alt="">
+        </div>
+    </div>
+    <div class="row mt-40">
+        <div class="col d-flex justify-content-center align-items-center">
+            <h6>{{ title }}</h6>
+        </div>
+    </div>
+    <div class="row mt-30">
+        <div class="col d-flex justify-content-center align-items-center">
+            <p>{{ text }}</p>
+        </div>
+    </div>
+    <div class="row mt-60">
+        <div class="col">
+            <div class="confirm-actions">
+                <button (click)="onCancel()" class="btn btn-outline-primary">{{ cancelLabel }}</button>
+                <button (click)="onConfirm()" class="btn btn-primary">{{ confirmLabel }}</button>
+            </div>
+        </div>
+    </div>
+</div>

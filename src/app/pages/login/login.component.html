@@ -1,0 +1,21 @@
+<div class="form">
+
+    <img src="../assets/google.png">
+
+    <!-- <input type="email" name="email" placeholder="Email" /> -->
+
+
+
+    <select class="form-select input" (change)="selectUser($event)">
+        <option value="" selected disabled>Select User</option>
+        <option *ngFor="let user of service.getUsers()" [value]="user.value">{{user.label}}</option>
+    </select>
+
+    <input class="input" type="password" name="Password" placeholder="Password" />
+
+    <button [routerLink]="['/start']">Sign in</button>
+
+
+    <a href="#">Create account</a>
+
+</div>

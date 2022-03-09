@@ -1,0 +1,26 @@
+<div class="card-option">
+    <h1 class="card__title">
+        {{item.cia}}
+        <!-- <img class="logo" src="./assets/{{item.company}}.jpg" alt=""> -->
+    </h1>
+    <div class="card__body">
+        <p class="price">
+            <!-- <span class="price__symbol">R$</span> -->
+            <!-- {{item.value | currency:'BRL'}}</p> -->
+            {{item.value }}</p>
+        <!-- <p class="price__tag">{{item.desc}}</p> -->
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let coverage of getList()">
+            <span>{{coverage.title}}: </span>
+            <span>{{coverage.value}}</span>
+        </li>
+    </ul>
+
+    <div class="d-grid gap-2 pt-2">
+
+        <button class="btn btn-primary" type="button" value="select">Selecionar
+        </button>
+    </div>
+</div>
+

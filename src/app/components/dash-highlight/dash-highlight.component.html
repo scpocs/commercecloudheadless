@@ -1,0 +1,24 @@
+<div class="card card-highlight">
+    <div class="card-header">
+        <div class="icon">
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fas {{iconClass}} fa-stack-1x fa-inverse"></i>
+            </span>
+
+        </div>
+        <div class="text">
+            {{title}}
+        </div>
+    </div>
+
+    <div class="card-body">
+        <ng-content></ng-content>
+    </div>
+
+    <div class="card-footer">
+        <div class="btn btn-primary">
+            {{btnLabel}}
+        </div>
+    </div>
+</div>

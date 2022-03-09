@@ -1,0 +1,27 @@
+<div class="input-group" [class.focus]='focus' [class.input-group-sm]='small'>
+
+
+
+    <span class="input-group-text"><i class="{{item.icon}}"></i></span>
+
+    <input *ngIf="item.type == 'input'" [(ngModel)]="item.value" type="text" class="form-control" placeholder="{{item.label}}"
+        (focus)="focus = true" (focusout)="focus = false">
+
+    <div *ngIf="item.type == 'check'" class="form-check form-control">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="item.value" [ngModelOptions]="{standalone: true}" />
+        <label class="form-check-label" (click)="item.value = !item.value">
+            {{item.label}}
+        </label>
+    </div>
+
+    <select *ngIf="item.type == 'select'" [(ngModel)]="item.value" class="form-select" aria-label="Default select example">
+        <option selected>{{item.label}}</option>
+        <option *ngFor="let option of item.options" value="1">{{option.label}}</option>
+    </select>
+
+</div>
+
+
+<div class="sub" *ngIf="item.selected && item.children">
+    <app-input *ngFor="let sub of item.children" [item]="sub"></app-input>
+</div>

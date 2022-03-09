@@ -1,0 +1,42 @@
+.jumbotron {
+    background-color: #18384a;
+    color: #fff;
+    padding: 1.5em 0 0.5em;
+
+    .title1 {
+        color: #69d0ff;
+        margin-bottom: 1em;
+    }
+
+    .search {
+        max-width: 80vw;
+        margin: 2em auto;
+    }
+}
+
+.cards {
+    margin: 2em;
+    .card {
+        border: none;
+
+        .card-header {
+            border-bottom: 4px solid #69d0ff;
+            color: #2170d5;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .card-body {
+            .list-group {
+                .list-group-item {
+                    padding: 1em 1em;
+                    display: flex;
+                    align-items: center;
+                    .title {
+                        padding-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.confirm-dialog {
+
+    position: fixed;
+
+    top: calc(50vh - 200px);
+    right: calc(50vw - calc(465px / 2));
+
+    z-index: 2;
+
+    width: 465px;
+
+    padding: 40px;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    box-shadow: 0px 3px 12px 1px rgba(161,159,161,1);
+
+    img {
+
+        width: 50px;
+        height: 50px;
+
+
+
+    }
+
+    p {
+
+        text-align: center;
+        max-width: 320px;
+
+    }
+
+    button {
+
+        height: 48px;
+        width: 116px;
+
+        border-radius: 2px;
+
+
+    }
+
+
+    .confirm-actions {
+
+        width: 100%;
+
+        display: flex;
+        justify-content: space-evenly;
+
+
+    }
+
+}

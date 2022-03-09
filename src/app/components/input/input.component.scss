@@ -1,0 +1,51 @@
+.input-group {
+    text-transform: uppercase;
+    padding: 0.25em 0.5em;
+    &:not(:last-child) {
+        margin-bottom: 0.4em;
+    }
+
+    ::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .input-group-text {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-radius: 0.5em 0 0 0.5em;
+        color: #fff;
+
+        i {
+            transition: all 0.2s ease;
+            min-width: 1em;
+            opacity: .5;
+        }
+    }
+
+    .form-control {
+        border-radius: 0 0.5em 0.5em 0;
+        border: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        text-transform: uppercase;
+    }
+    .form-check{
+        // background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.5);
+        padding-left: 2.2em;
+
+    }
+    
+    
+    &.focus {
+        .input-group-text {
+            i {
+                font-size: 1.2em;
+                min-width: 1.3em;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.sidebar-form {
+    border-radius: 0;
+    background-color: var(--primary);
+    color: #fff;
+    display: inline-block;
+    // margin-bottom: 0.5em;
+    // margin: 0.5em 0.25em;
+
+    .p-sidebar-content {
+        position: absolute;
+        width: 100%;
+        padding-top: 0.5em;
+    }
+
+    .p-sidebar-header {
+        background: rgb(0 0 0 / 20%);
+        .p-sidebar-close {
+            z-index: 99;
+            background: rgb(255 255 255 / 50%);
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 0.5em;
+    }
+
+    .card-header {
+        i {
+            min-width: 1.3em;
+        }
+    }
+
+    .body {
+        padding: 0.5rem 0;
+
+        .input-group {
+            // background: red;
+            margin-bottom: 0.4em;
+
+            &:not(:last-child) {
+            }
+
+            .input-group-text {
+                background-color: rgb(255 255 255 / 70%);
+            }
+
+            .form-control,
+            .input-group-text {
+                border: none;
+                outline: none;
+                box-shadow: none;
+                border-radius: 0;
+
+                i {
+                    min-width: 1.3em;
+                }
+            }
+
+            .error {
+                display: inline-block;
+                width: 100%;
+                background: red;
+                padding: 0.3em;
+                font-size: 0.8em;
+            }
+        }
+    }
+
+    .btn-group {
+        width: 100%;
+    }
+}
+
+/*
+
+    <div class="card-body">
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+
+    </div>
+
+*/

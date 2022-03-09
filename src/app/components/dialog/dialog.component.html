@@ -1,0 +1,8 @@
+<div @fade (@fade.done)="onContainerAnimationEnd()" style="z-index: {{ getMaxZIndex() }};" class="dialog-container" *ngIf="visible">
+    <div @dialogOpenClose (@dialogOpenClose.done)="onContentAnimationEnd()" *ngIf="contentVisible" class="dialog-content" >
+        <ng-content></ng-content>
+        <div *ngIf="closable" class="close-dialog-button">
+            <img (click)="hide()" src="assets/images/times.svg" alt="">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div *ngIf="dynamicFormGroup">
+    <div class="sidebar-inputs">
+
+
+        <form [formGroup]="dynamicFormGroup" (ngSubmit)="onSubmit()" novalidate class="needs-validation ">
+
+            <legend *ngIf="formTemplate.title">{{formTemplate.title}}</legend>
+
+            <div class="body">
+
+
+                <div *ngFor="let form_elem of fields">
+                    <div [ngSwitch]="form_elem.type" class="input-group input-group-sm">
+                        <span class="input-group-text">
+                            <i class="{{form_elem.icon}}"></i>
+                        </span>
+
+                        <input *ngSwitchCase="'textBox'" type="text" class="form-control "
+                            (focusout)="onFocusOutEvent($event)" placeholder="{{form_elem.label}}"
+                            formControlName="{{form_elem.name}}" />
+
+                        <input *ngSwitchCase="'number'" type="number" class="form-control "
+                            placeholder="{{form_elem.label}}" formControlName="{{form_elem.name}}" />
+
+                        <select *ngSwitchCase="'select'" class="form-control " formControlName="{{form_elem.name}}">
+                            <option value="" disabled selected>{{form_elem.label}}</option>
+                            <option *ngFor="let option of form_elem.options">
+                                {{option}}
+                            </option>
+                        </select>
+
+
+                        <small class="error"
+                            *ngIf="!dynamicFormGroup.get(form_elem.name)?.valid && dynamicFormGroup.get(form_elem.name)?.touched">
+                            {{dynamicFormGroup.get(form_elem.name)?.errors | json}}
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group btn-group-sm" role="group" aria-label="Actions">
+                <button *ngIf="formTemplate.clearLabel" type="button" [disabled]='!dynamicFormGroup?.touched'
+                    (click)="clearForm()" class="btn btn-warning">{{formTemplate.clearLabel}}</button>
+                <button *ngIf="formTemplate.submitLabel" class="btn btn-success"
+                    [disabled]='dynamicFormGroup.invalid'>{{formTemplate.submitLabel}}</button>
+            </div>
+
+        </form>
+    </div>
+</div>

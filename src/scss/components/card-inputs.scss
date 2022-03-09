@@ -1,0 +1,70 @@
+.card-inputs {
+    border-radius: 0;
+    background-color: var(--primary);
+    color: #fff;
+    display: inline-block;
+    // margin-bottom: 0.5em;
+    margin: 0.5em 0.25em;
+
+    &:not(:last-child) {
+        margin-right: 0.5em;
+    }
+
+    .card-header {
+        i {
+            min-width: 1.3em;
+        }
+    }
+    .card-body {
+        padding: 0.5rem;
+
+        .input-group {
+            &:not(:last-child) {
+                margin-bottom: 0.4em;
+            }
+
+            .input-group-text {
+                background-color: rgb(255 255 255 / 70%);
+            }
+
+            .form-control,
+            .input-group-text {
+                border: none;
+                outline: none;
+                box-shadow: none;
+                border-radius: 0;
+
+                i {
+                    min-width: 1.3em;
+                }
+            }
+        }
+    }
+}
+
+/*
+
+    <div class="card-body">
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-text"><i class="fas fa-chevron-circle-right"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1">
+        </div>
+
+
+    </div>
+
+*/
