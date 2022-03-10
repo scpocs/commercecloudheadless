@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { SeducService } from './service/seduc.service';
 
@@ -51,6 +52,8 @@ export class AppComponent {
 			]
 		}
 	];
+
+	
 
 	scrollToBottom(): void {
 		try {

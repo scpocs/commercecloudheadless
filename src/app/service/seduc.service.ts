@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class SeducService {
     {
       id: 10801,
       name: "Gisele dos Santos",
-      img: "alice.jpg",
+      img: "gisele.jpg",
       documents: [
         { name: "Identidade", status: "pending" }
       ],
@@ -21,7 +22,7 @@ export class SeducService {
         {
           id: 10802,
           name: "Mario dos Santos",
-          img: "lucas.jpg",
+          img: "mario.jpg",
           documents: [
             { name: "Histórico Escolar", status: "pending" }
           ],
@@ -29,7 +30,15 @@ export class SeducService {
         {
           id: 10803,
           name: "Marcela dos Santos",
-          img: "laura.jpg",
+          img: "marcela.jpg",
+          documents: [
+            { name: "Histórico Escolar", status: "pending" }
+          ],
+        },
+        {
+          id: 10804,
+          name: "Mariana dos Santos",
+          img: "mariana.jpg",
           documents: [
             { name: "Histórico Escolar", status: "pending" }
           ],
@@ -66,7 +75,7 @@ export class SeducService {
 
   user = this.users[0]
 
-  
+
 
 
 
@@ -109,8 +118,13 @@ export class SeducService {
     },
   ]
 
-  
-  constructor(private http: HttpClient) {
+
+  constructor(private http: HttpClient, private router: Router) {
+  }
+
+  logout() {
+    this.loggedIn = false;
+    this.router.navigate(['/login']);
   }
 
   getUsers() {
@@ -124,7 +138,13 @@ export class SeducService {
     return list;
   }
 
-  selectUserById(id:any) {
+  getDependentById(id: any) {
+    let dependent = this.user.dependents.find(dependent => dependent.id == id);
+    return dependent ? dependent : null;
+
+  }
+
+  selectUserById(id: any) {
     let user = this.users.find(user => user.id == id);
 
     if (user) {
@@ -134,14 +154,14 @@ export class SeducService {
 
 
   getPendingDocuments() {
-    let list:any = [];
+    let list: any = [];
 
     this.user.documents.forEach(document => {
       if (document.status == "pending") {
-        list.push({ name:document.name, user: this.user });
+        list.push({ name: document.name, user: this.user });
       }
     });
-    
+
     this.user.dependents.forEach(dependent => {
       dependent.documents.forEach(document => {
         if (document.status == "pending") {

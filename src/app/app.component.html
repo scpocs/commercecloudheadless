@@ -10,11 +10,23 @@
     </div>
   </nav>
 
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
 
 <p-sidebar position="right" [(visible)]="service.userMenu">
-  <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
-  {{service.user.name}}
+  <span class="d-flex">
+    <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
+    <span class="user-name">{{service.user.name}}</span>
+  </span>
+
+  <hr>
+
+  <div class="list-group">
+    <a href="#" [routerLink]="['user',service.user.id]" class="list-group-item list-group-item-action">Perfil</a>
+    <a href="#" class="list-group-item list-group-item-action">Dependentes</a>
+    <a href="#" class="list-group-item list-group-item-action">Documentos pendentes</a>
+    <a href="#" class="list-group-item list-group-item-action">Sair</a>
+  </div>
+
 </p-sidebar>

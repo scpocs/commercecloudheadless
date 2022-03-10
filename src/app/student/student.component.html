@@ -1,4 +1,23 @@
 <div class="container-fluid">
-    <p>student works!</p>
-    <router-outlet></router-outlet>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+
+            <p class="h6">Estudante:</p>
+            <span class="d-flex">
+                <img src="/assets/{{student.img}}" class="img-user-8 img-fluid">
+                <span class="user-name">{{student.name}}</span>
+            </span>
+
+
+            <span>
+                <p-menu [model]="items"></p-menu>
+            </span>
+
+        </div>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
 </div>

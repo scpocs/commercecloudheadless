@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MenuItem } from 'primeng/api';
+import { SeducService } from '../service/seduc.service';
 
 @Component({
   selector: 'app-student',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  student: any;
 
-  ngOnInit(): void {
+  items: MenuItem[] = [
+
+    { label: 'Inicio', icon: 'fa fa-home', routerLink: ['home'] },
+    { label: 'Calendario', icon: 'fa fa-calendar' },
+    { label: 'Biblioteca', icon: 'fa fa-book' },
+    { label: 'Downloads', icon: 'fa fa-download' },
+    { label: 'Notas', icon: 'fa fa-check-square-o' },
+
+  ];
+
+  constructor(private route: ActivatedRoute, public service: SeducService) {
+
+    if (this.route.parent) {
+      this.route.parent.params.subscribe(params => {
+        this.route.parent?.paramMap.subscribe(params => {
+          let id = params.get('id')
+          this.student = service.getDependentById(id);
+        })
+      });
+    }
+  }
+
+
+
+  ngOnInit() {
+
   }
 
 }

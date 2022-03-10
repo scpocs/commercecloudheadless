@@ -5,7 +5,7 @@ import { StudentRoutingModule } from './student-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StudentComponent } from './student.component';
 
-
+import { MenuModule } from 'primeng/menu';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -13,7 +13,9 @@ import { StudentComponent } from './student.component';
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    MenuModule
+    
   ]
 })
 export class StudentModule { }
