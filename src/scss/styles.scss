@@ -77,10 +77,19 @@ html {
   box-shadow: 3px 3px 35px 2px rgb(0 0 0 / 40%);
 }
 
-.p-menubar-start {
-  color: #1f5ea8;
-  font-weight: bold;
-  padding-left: 1em;
+.p-menubar {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vw;
+  //   z-index: 9999;
+  //   background: #69d0ff;
+
+  .p-menubar-start {
+    // color: #1f5ea8;
+    // font-weight: bold;
+    // padding-left: 1em;
+  }
 }
 
 .page {
@@ -127,15 +136,6 @@ html {
 .img-user-8 {
   max-height: 8em;
   border: 2px solid #e3e3e3;
-}
-
-.p-menubar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 9999;
-  background: #69d0ff;
 }
 
 .btn-primary {

@@ -16,7 +16,7 @@ export class AppComponent {
 
 	title = 'seduc';
 
-	constructor(public service: SeducService) { }
+	constructor(public service: SeducService, private router: Router) { }
 
 	items: MenuItem[] = [
 		{
@@ -53,7 +53,12 @@ export class AppComponent {
 		}
 	];
 
-	
+	menuClick(url: any) {
+		console.log(url)
+		this.service.userMenu = false;
+		// this.router.navigate(['/user', this.service.user.id]);
+		this.router.navigate([url]);
+	}
 
 	scrollToBottom(): void {
 		try {

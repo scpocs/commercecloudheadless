@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { StudentComponent } from './student.component';
 
 import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -14,7 +16,9 @@ import { MenuModule } from 'primeng/menu';
   imports: [
     CommonModule,
     StudentRoutingModule,
-    MenuModule
+    MenuModule,
+    MenubarModule,
+    TabMenuModule
     
   ]
 })

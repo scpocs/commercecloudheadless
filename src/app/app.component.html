@@ -23,10 +23,10 @@
   <hr>
 
   <div class="list-group">
-    <a href="#" [routerLink]="['user',service.user.id]" class="list-group-item list-group-item-action">Perfil</a>
-    <a href="#" class="list-group-item list-group-item-action">Dependentes</a>
-    <a href="#" class="list-group-item list-group-item-action">Documentos pendentes</a>
-    <a href="#" class="list-group-item list-group-item-action">Sair</a>
+    <span (click)="menuClick('user/'+service.user.id)" class="list-group-item list-group-item-action">Perfil</span>
+    <span class="list-group-item list-group-item-action">Dependentes</span>
+    <span class="list-group-item list-group-item-action">Documentos pendentes</span>
+    <span (click)="menuClick('/login')" class="list-group-item list-group-item-action">Sair</span>
   </div>
 
 </p-sidebar>

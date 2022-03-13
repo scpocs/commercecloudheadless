@@ -7,6 +7,8 @@ import { UserComponent } from './user.component';
 import { MenuModule } from 'primeng/menu';
 import { StudentsComponent } from './students/students.component';
 
+import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { StudentsComponent } from './students/students.component';
   imports: [
     CommonModule,
     UserRoutingModule,
-    MenuModule
+    MenuModule,
+    MenubarModule,
+    TabMenuModule,
   ]
 })
 export class UserModule { }
