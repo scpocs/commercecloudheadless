@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
+import { EventsComponent } from './events/events.component';
+import { NewsComponent } from './news/news.component';
+import { ComunicationComponent } from './comunication/comunication.component';
 
 
 
@@ -13,7 +16,10 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     StartComponent,
 
-    LoginComponent
+    LoginComponent,
+     EventsComponent,
+     NewsComponent,
+     ComunicationComponent
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,23 @@
     }
 }
 
+.jumbotron {
+    background-color: #18384a;
+    color: #fff;
+    padding: 1.5em 0 0.5em;
+
+    .title1 {
+        color: #69d0ff;
+        margin-bottom: 1em;
+    }
+
+    .search {
+        max-width: 80vw;
+        margin: 2em auto;
+    }
+}
+
+
 .doc {
     .data {
         display: inline-block;

@@ -37,6 +37,8 @@ export class SeducService {
           idade: "5 anos",
           email: "Mario@gmail.com",
           telefone: "(85) 9999-9999",
+          tamanhoFarda:"G",
+          tamanhoSapato:"M",
           img: "mario.jpg",
           status: "not-enrolled",
           documents: [
@@ -50,6 +52,8 @@ export class SeducService {
           idade: "7 anos",
           email: "Marcela@gmail.com",
           telefone: "(85) 9999-9999",
+          tamanhoFarda: "G",
+          tamanhoSapato: "M",
           img: "marcela.jpg",
           status: "not-enrolled",
           documents: [
@@ -63,6 +67,8 @@ export class SeducService {
           idade: "14 anos",
           email: "Mariana@gmail.com",
           telefone: "(85) 9999-9999",
+          tamanhoFarda: "G",
+          tamanhoSapato: "M",
           img: "mariana.jpg",
           status: "enrolled",
           documents: [
@@ -88,6 +94,8 @@ export class SeducService {
           idade: "16 anos",
           email: "Lucas@gmail.com",
           telefone: "(85) 9999-9999",
+          tamanhoFarda: "G",
+          tamanhoSapato: "M",
           img: "lucas.jpg",
           status: "not-enrolled",
           documents: [
@@ -101,6 +109,8 @@ export class SeducService {
           idade: "9 anos",
           email: "Laura@gmail.com",
           telefone: "(85) 9999-9999",
+          tamanhoFarda: "G",
+          tamanhoSapato: "M",
           img: "laura.jpg",
           status: "not-enrolled",
           documents: [
@@ -120,7 +130,7 @@ export class SeducService {
   startMenu = [
     {
       title: "Eventos",
-      routerLink: "/seguro",
+      routerLink: "/events",
       bgColor: "blue-500",
       description: "",
       icon: "fa fa-calendar",
@@ -129,7 +139,7 @@ export class SeducService {
     },
     {
       title: "Comunicação",
-      routerLink: "/compra",
+      routerLink: "/comunication",
       bgColor: "blue-500",
       description: "",
       icon: "fa fa-newspaper-o",
@@ -138,7 +148,7 @@ export class SeducService {
     },
     {
       title: "Notícias",
-      routerLink: "/planos",
+      routerLink: "/news",
       bgColor: "blue-500",
       description: "",
       icon: "fa fa-file-text-o",
