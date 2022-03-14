@@ -10,6 +10,8 @@ import { StudentsComponent } from './students/students.component';
 import { MenubarModule } from 'primeng/menubar';
 import { TabMenuModule } from 'primeng/tabmenu';
 
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,6 +24,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
     MenuModule,
     MenubarModule,
     TabMenuModule,
+    LeafletModule,
   ]
 })
 export class UserModule { }

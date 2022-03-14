@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { SeducService } from 'src/app/service/seduc.service';
 
 import { latLng, MapOptions, tileLayer, Map, Marker, icon } from 'leaflet';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-students',
-  templateUrl: './students.component.html',
-  styleUrls: ['./students.component.scss']
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss']
 })
-export class StudentsComponent implements OnInit {
+export class MapComponent implements OnInit {
+
 
   mapOptions!: MapOptions;
   map!: Map;
 
-  constructor(public service: SeducService) { }
+  constructor(public service: SeducService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
     this.initializeMapOptions();
@@ -43,7 +46,7 @@ export class StudentsComponent implements OnInit {
       },
       {
         name: "escola 2",
-        lat: -3.777113388378782, 
+        lat: -3.777113388378782,
         lon: - 38.50889667086258
       },
       {
@@ -59,7 +62,7 @@ export class StudentsComponent implements OnInit {
     });
   }
 
-  private addSampleMarker(element:any) {
+  private addSampleMarker(element: any) {
     const marker = new Marker([element.lat, element.lon])
       .setIcon(
         icon({
@@ -68,15 +71,15 @@ export class StudentsComponent implements OnInit {
           iconUrl: 'assets/icon.png'
           // iconUrl: 'assets/marker-icon.png'
         }));
-    element.callFunction = this.matricular
-    marker.bindPopup(this.makePopup(element));
+    // element.callFunction = this.matricular
+    // marker.bindPopup(this.makePopup(element));
     marker.on('click',
       (e) => { this.pinWasCliscked(e) });
     marker.addTo(this.map);
   }
 
-  private pinWasCliscked(e:any) {
-    console.log(e);
+  private pinWasCliscked(e: any) {
+    this.selectSchool();
     // this.pinClicked.emit('');
   }
 
@@ -85,11 +88,14 @@ export class StudentsComponent implements OnInit {
       `<div>Nome: ${data.name}</div>` +
       `<div>YY: ${data.name}</div>` +
       `<div>XX: ${data.name}</div>` +
-      `<button type="button" onclick(console.log("Hello")) class="btn btn-primary btn-block">Escolher</button>` 
+      `<button type="button" onclick(console.log("Hello")) class="btn btn-primary btn-block">Escolher</button>`
   }
 
-  matricular() {
-    console.log("matricular");
+
+  selectSchool() {
+    this.ngZone.run(() => {
+      this.router.navigate(['/student', this.service.student.id, 'school']);
+    });
   }
 
 

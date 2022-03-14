@@ -20,11 +20,17 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item" *ngFor="let item of service.getPendingDocuments()">
-                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
-                                <span class="title">
-                                    {{item.name}} [{{item.user.name}}]
+                        <li class="list-group-item doc" *ngFor="let item of service.getPendingDocuments()" (click)="service.selectDocument(item)">
+                            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+                            <div class="data">
+                                <span class="name">
+                                    {{item.user.name}}
                                 </span>
+                                <span class="title">
+                                    {{item.id}} - {{item.name}}
+                                </span>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -40,11 +46,28 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        <li class="list-group-item" *ngFor="let item of service.user.dependents" [routerLink]="['/student',item.id]">
+                        <li class="list-group-item student" *ngFor="let item of service.user.dependents"
+                            [routerLink]="['/student',item.id]">
                             <img src="assets/{{item.img}}" class="img-user-4 img-fluid">
-                            <span class="title">{{item.name}}</span>
-                        </li>
 
+                            <div class="data">
+                                <span class="title">
+                                    {{item.name}}
+                                </span>
+                                <span class="name">
+                                    
+
+                                    <div class="alert alert-danger" *ngIf="item.status == 'not-enrolled'">
+                                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                        Matricula Pendente
+                                    </div>
+                                    <div class="alert alert-success" *ngIf="item.status == 'enrolled'">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                       Matriculado
+                                    </div>
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

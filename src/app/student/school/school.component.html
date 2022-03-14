@@ -1,0 +1,21 @@
+<div class="card">
+    <!-- <img src="assets/escola1.jpg" class="card-img-top" alt="..."> -->
+
+    <span class="card-img-top">
+        <p-galleria [value]="images" >
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.previewImageSrc" [alt]="item.alt" />
+            </ng-template>
+        </p-galleria>
+
+
+
+    </span>
+
+    <div class="card-body">
+        <h5 class="card-title">Escola 1</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary" (click)="selectSchool()">Matricular nessa escola</a>
+    </div>
+</div>

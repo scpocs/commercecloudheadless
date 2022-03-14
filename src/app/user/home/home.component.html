@@ -1,47 +1,82 @@
 <div class="row">
-    <div class="col">
-        <div class="card">
+    <div class="col-12 col-lg-6">
+        <div class="card mt-2 mb-2">
             <div class="card-header">
                 Dependentes
             </div>
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item" *ngFor="let item of service.user.dependents"
+                    <li class="list-group-item student" *ngFor="let item of service.user.dependents"
                         [routerLink]="['/student',item.id]">
-                        <img src="assets/{{item.img}}" class="img-user-2 img-fluid">
-                        <span class="title">{{item.name}}</span>
-                    </li>
+                        <img src="assets/{{item.img}}" class="img-user-4 img-fluid">
 
+                        <div class="data">
+                            <span class="title">
+                                {{item.name}}
+                            </span>
+                            <span class="name">
+
+
+                                <div class="alert alert-danger" *ngIf="item.status == 'not-enrolled'">
+                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                    Matricula Pendente
+                                </div>
+                                <div class="alert alert-success" *ngIf="item.status == 'enrolled'">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    Matriculado
+                                </div>
+                            </span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="col">
+    <div class="col-12 col-lg-6">
 
-<div class="card">
-    <div class="card-header">
-        Documentos Pendentes
-    </div>
-    <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let item of service.getPendingDocuments()">
-                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
-                <span class="title">
-                    {{item.name}} [{{item.user.name}}]
-                </span>
-            </li>
-        </ul>
-    </div>
-</div>
-    </div>
-    <div class="col">
+        <div class="card mt-2 mb-2">
+            <div class="card-header">
+                Documentos Pendentes
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item doc" *ngFor="let item of service.getPendingDocuments()"
+                        (click)="service.selectDocument(item)">
+                        <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+                        <div class="data">
+                            <span class="name">
+                                {{item.user.name}}
+                            </span>
+                            <span class="title">
+                                {{item.id}} - {{item.name}}
+                            </span>
+                        </div>
 
-        <div class="card">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6">
+
+        <div class="card mt-2 mb-2">
             <div class="card-header">
                 Mensagens recebidas
             </div>
             <div class="card-body">
-                xxx
+                <div class="message" *ngFor="let item of service.messagesList">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            {{item.title}}
+                        </div>
+                        <div class="card-body">
+                            {{item.message}}
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{item.time}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

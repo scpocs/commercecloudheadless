@@ -2,7 +2,9 @@
 
   <nav class="navbar" *ngIf="service.loggedIn">
     <div class="container-fluid">
-      <span class="navbar-brand" [routerLink]="['start']">SEDUC</span>
+      <span class="navbar-brand" [routerLink]="['start']">
+        <img class="logo" src="/assets/for.jpg" alt="">
+      </span>
       <form class=" user" (click)="service.userMenu = true">
         <img src="/assets/{{service.user.img}}" class="img-user-2 img-fluid">
         <span class="name">{{service.user.name}}</span>
@@ -13,6 +15,7 @@
   <router-outlet></router-outlet>
 </div>
 
+<p-toast></p-toast>
 
 <p-sidebar position="right" [(visible)]="service.userMenu">
   <span class="d-flex">

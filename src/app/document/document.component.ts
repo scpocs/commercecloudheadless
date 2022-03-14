@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SeducService } from 'src/app/service/seduc.service';
+import { SeducService } from '../service/seduc.service';
 
 @Component({
-  selector: 'app-start',
-  templateUrl: './start.component.html',
-  styleUrls: ['./start.component.scss']
+  selector: 'app-document',
+  templateUrl: './document.component.html',
+  styleUrls: ['./document.component.scss']
 })
-export class StartComponent implements OnInit {
-
-
-
+export class DocumentComponent implements OnInit {
 
   constructor(public service: SeducService, private router: Router) {
     this.service.loggedIn = true;

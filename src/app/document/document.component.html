@@ -1,0 +1,31 @@
+
+<div class="file-upload">
+    <ul class="list-group">
+        <li class="list-group-item doc">
+            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+            <div class="data">
+                <span class="name">
+                    {{service.selectedDocument.user.name}}
+                </span>
+                <span class="title">
+                    {{service.selectedDocument.name}}
+                </span>
+            </div>
+        </li>
+    </ul>
+
+    <div class="icon m3">
+        <i class="fa fa-5x fa-cloud-upload" aria-hidden="true"></i>
+    </div>
+
+    <div class="input-group mt-3 mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span>
+        <input type="file" class="form-control" placeholder="Nome arquivo" aria-describedby="basic-addon1">
+    </div>
+
+<div class="d-grid gap-2">
+    <button type="button" class="btn btn-primary" (click)="service.enviar()">Enviar</button>
+</div>
+
+
+</div>

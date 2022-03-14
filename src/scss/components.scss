@@ -32,6 +32,92 @@
     }
 }
 
+.doc {
+    .data {
+        display: inline-block;
+        padding-left: 1em;
+        .name {
+            display: block;
+            font-size: 0.8em;
+            margin-bottom: 0.2em;
+        }
+        .title {
+            display: block;
+            display: block;
+            font-weight: 600;
+        }
+    }
+}
+.student {
+    .data {
+        display: inline-block;
+        padding-left: 1em;
+        vertical-align: top;
+        max-width: 70%;
+
+        .alert {
+            margin-bottom: 0;
+            padding: 0.3rem 1rem;
+            margin-top: 0.5em;
+                font-weight: 700;
+        }
+
+        .name {
+            display: block;
+            font-size: 0.8em;
+            margin-bottom: 0.2em;
+        }
+        .title {
+            display: block;
+            display: block;
+            font-weight: 600;
+        }
+    }
+}
+
+.account {
+
+    margin: .5em 0;
+
+    .h6 {
+        font-size: 0.9em;
+        margin-bottom: 1em;
+        font-weight: 700;
+        opacity: 0.5;
+    }
+
+    .data {
+        padding-left: 0.5em;
+        .user-name {
+            font-size: 1.1em;
+            display: block;
+            font-weight: 700;
+            opacity: .8;
+            margin-bottom: .5em;
+        }
+        .text {
+            opacity: .5;
+            margin-bottom: .5em;
+            font-size: .9em;
+            display: block;
+        }
+    }
+}
+
+
+//  .card-body {
+//             .list-group {
+//                 .list-group-item {
+//                     padding: 1em 1em;
+//                     display: flex;
+//                     align-items: center;
+//                     .title {
+//                         padding-left: 1em;
+//                     }
+//                 }
+//             }
+//         }
+
 ///
 
 // .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {

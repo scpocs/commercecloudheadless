@@ -1,4 +1,13 @@
-.user-name{
-       font-size: 1.3em;
+.user-name {
+    font-size: 1.3em;
     padding-left: 0.5em;
+}
+
+.navbar {
+    .navbar-brand {
+        padding: 0;
+        .logo {
+            max-height: 1.8em;
+        }
+    }
 }

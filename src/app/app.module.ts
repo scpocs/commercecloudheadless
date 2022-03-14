@@ -17,12 +17,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { SidebarModule } from 'primeng/sidebar';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DocumentComponent } from './document/document.component';
 
+import { ToastModule } from 'primeng/toast';
+
+import { MessageService } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 registerLocaleData(ptBr);
 @NgModule({
   declarations: [
     AppComponent,
+    DocumentComponent,
   ],
   imports: [
     CommonModule,
@@ -33,10 +41,16 @@ registerLocaleData(ptBr);
     SidebarModule,
     BrowserAnimationsModule,
 
+    MenuModule,
+    MenubarModule,
+    TabMenuModule,
+    LeafletModule,
+
     MenubarModule,
     SharedModule,
+    ToastModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [MessageService, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

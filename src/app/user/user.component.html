@@ -1,24 +1,20 @@
 <div class="container-fluid">
     <p-menubar [model]="items"></p-menubar>
     <hr>
-    <div class="row">
-        <div class="col-3">
-           
-            <p class="h6">Responsável:</p>
-            <span class="d-flex">
-                <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
+    <div class="account">
+
+        <p class="h6">Estudante:</p>
+        <span class="d-flex">
+            <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
+            <div class="data">
                 <span class="user-name">{{service.user.name}}</span>
-            </span>
-
-            <hr>
-
-            <span>
-                <router-outlet></router-outlet>
-            </span>
-
-        </div>
-        <div class="col">
-        </div>
-
+                <span class="text">{{service.user.email}}</span>
+                <span class="text">{{service.user.phone}}</span>
+                <button type="button" class="btn btn-secondary btn-sm">editar</button>
+    
+            </div>
+        </span>
     </div>
+    <router-outlet></router-outlet>
+    
 </div>

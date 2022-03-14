@@ -1,3 +1,14 @@
+<div class="matricula" *ngIf="this.service.student.status == 'not-enrolled'">
+    <div class="alert alert-danger" role="alert">
+        O Prazo de matricula esta acabando!
+    </div>
+
+    <div class="d-grid ">
+        <button (click)="matricular()" class="btn btn-primary" type="button">Matricular Agora</button>
+    </div>
+</div>
+
+
 <div class="row">
     <div class="col-12 col-lg-4">
         <div class="card">
@@ -19,14 +30,5 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-lg-4">
-        <div class="card">
-            <div class="card-header">
-                Mensagens
-            </div>
-            <div class="card-body">
-                xxx
-            </div>
-        </div>
-    </div>
+  
 </div>

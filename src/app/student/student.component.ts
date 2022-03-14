@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { SeducService } from '../service/seduc.service';
 
@@ -10,29 +10,30 @@ import { SeducService } from '../service/seduc.service';
 })
 export class StudentComponent implements OnInit {
 
-  student: any;
+  // student: any;
 
   items: MenuItem[] = [
 
     { label: 'Inicio', icon: 'fa fa-home', routerLink: ['home'] },
     { label: 'Calendario', icon: 'fa fa-calendar' },
     { label: 'Biblioteca', icon: 'fa fa-book' },
-    { label: 'Downloads', icon: 'fa fa-download' },
+    { label: 'Disciplinas extracurriculares', icon: 'fa fa-download' },
     { label: 'Notas', icon: 'fa fa-check-square-o' },
 
   ];
 
-  constructor(private route: ActivatedRoute, public service: SeducService) {
+  constructor(private route: ActivatedRoute, public service: SeducService, private router: Router) {
 
     if (this.route.parent) {
       this.route.parent.params.subscribe(params => {
         this.route.parent?.paramMap.subscribe(params => {
           let id = params.get('id')
-          this.student = service.getDependentById(id);
+          this.service.student = service.getDependentById(id);
         })
       });
     }
   }
+
 
 
 
