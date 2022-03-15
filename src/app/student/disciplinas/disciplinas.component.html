@@ -1,0 +1,25 @@
+<hr>
+
+<p class="h3">Disciplinas extra curriculares</p>
+
+<p class="text">
+    Você tem {{count}} de 4 matérias extra curriculares. <span *ngIf="count==4" class="badge bg-success">Sucesso!</span>
+</p>
+
+<div class="flex-container">
+
+
+
+<div class="card " *ngFor="let item of disciplinas" (click)="toggle(item)" [class.selected]='item.selected'>
+    <div class="card-body">
+        <span class="icon">
+            <i class=" {{item.icon}} {{item.iconColor}}" aria-hidden="true"></i>
+        </span>
+        <h5 class="card-title">{{item.title}}</h5>
+        <span class="card-text">
+            {{item.description}}
+        </span>
+    </div>
+</div>
+
+</div>

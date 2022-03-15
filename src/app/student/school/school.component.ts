@@ -43,8 +43,10 @@ export class SchoolComponent implements OnInit {
   }
 
   selectSchool() {
-    console.log(this.service.student.id)
-    this.router.navigate(['/student', this.service.student.id, 'home']);
+    this.service.student.status = 'enrolled';
+    this.router.navigate(['/student', this.service.student.id]);
+
+
   }
 
 }

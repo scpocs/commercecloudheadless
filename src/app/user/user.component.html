@@ -8,10 +8,28 @@
             <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
             <div class="data">
                 <span class="user-name">{{service.user.name}}</span>
-                <span class="text">{{service.user.email}}</span>
-                <span class="text">{{service.user.phone}}</span>
-                <button type="button" class="btn btn-secondary btn-sm">editar</button>
     
+
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-7">
+                        <input type="email" [disabled]="formDisabled" class="form-control form-control-sm"
+                            value="{{service.user.email}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Telefone</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm"
+                            value="{{service.user.phone}}">
+                    </div>
+                </div>
+
+                <button *ngIf="formDisabled" type="button" class="btn btn-warning btn-sm"
+                    (click)="formDisabled = !formDisabled">editar</button>
+                <button *ngIf="!formDisabled" type="button" class="btn btn-success btn-sm"
+                    (click)="formDisabled = !formDisabled">salvar</button>
+
             </div>
         </span>
     </div>

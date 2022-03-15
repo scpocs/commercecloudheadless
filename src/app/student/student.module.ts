@@ -12,14 +12,27 @@ import { SchoolComponent } from './school/school.component';
 import { MapComponent } from './map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
+import { CalendarModule } from 'primeng/calendar';
+
 import { GalleriaModule } from 'primeng/galleria';
+
+import { FormsModule } from '@angular/forms';
+import { DisciplinasComponent } from './disciplinas/disciplinas.component';
+import { CalendarioComponent } from './calendario/calendario.component';
+import { BibliotecaComponent } from './biblioteca/biblioteca.component';
+import { NotasComponent } from './notas/notas.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     StudentComponent,
     SchoolComponent,
-    MapComponent
+    MapComponent,
+    DisciplinasComponent,
+    CalendarioComponent,
+    BibliotecaComponent,
+    NotasComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +41,10 @@ import { GalleriaModule } from 'primeng/galleria';
     MenubarModule,
     TabMenuModule,
     LeafletModule,
+    CalendarModule,
     GalleriaModule,
+    FormsModule,
+    ComponentsModule,
     
   ]
 })

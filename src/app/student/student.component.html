@@ -8,12 +8,55 @@
         <span class="d-flex">
             <img src="/assets/{{service.student.img}}" class="img-user-8 img-fluid">
             <div class="data">
-                <span class="user-name">{{service.student.name}}</span>
-                <span class="text">{{service.student.email}}</span>
-                <span class="text">{{service.student.phone}}</span>
-                <span class="text">{{service.student.sexo}}</span>
-                <span class="text">{{service.student.idade}}</span>
-                <button type="button" class="btn btn-secondary btn-sm">editar</button>
+                <div class="row">
+                    <div class="col">
+                        <span class="user-name">{{service.student.name}}</span>
+                    </div>
+                    <div class="col">
+                        <h6 *ngIf="service.student.status == 'enrolled'"><span class="badge bg-success">Matriculado</span></h6>
+                        <h6 *ngIf="service.student.status != 'enrolled'"><span class="badge bg-danger">Matricula Pendente</span></h6>
+                    </div>
+                </div>
+
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-7">
+                        <input type="email" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.email}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Telefone</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.telefone}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Sexo</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.sexo}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Idade</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.idade}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Tamanho Farda</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.tamanhoFarda}}">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <label class="col-sm-5 col-form-label col-form-label-sm">Tamanho Sapato</label>
+                    <div class="col-sm-7">
+                        <input type="text" [disabled]="formDisabled" class="form-control form-control-sm" value="{{service.student.tamanhoSapato}}">
+                    </div>
+                </div>
+
+                <button *ngIf="formDisabled" type="button" class="btn btn-warning btn-sm" (click)="formDisabled = !formDisabled">editar</button>
+                <button *ngIf="!formDisabled" type="button" class="btn btn-success btn-sm" (click)="formDisabled = !formDisabled">salvar</button>
 
             </div>
         </span>

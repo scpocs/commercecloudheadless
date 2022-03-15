@@ -9,6 +9,9 @@ import { SeducService } from 'src/app/service/seduc.service';
 })
 export class HomeComponent implements OnInit {
 
+  date!: Date;
+
+
   id!: string | null;
 
   constructor(private route: ActivatedRoute, public service: SeducService, private router: Router) {

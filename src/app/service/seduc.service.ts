@@ -38,7 +38,8 @@ export class SeducService {
           email: "Mario@gmail.com",
           telefone: "(85) 9999-9999",
           tamanhoFarda:"G",
-          tamanhoSapato:"M",
+          tamanhoSapato: "M",
+          nota:"7.0",
           img: "mario.jpg",
           status: "not-enrolled",
           documents: [
@@ -54,6 +55,7 @@ export class SeducService {
           telefone: "(85) 9999-9999",
           tamanhoFarda: "G",
           tamanhoSapato: "M",
+          nota: "8.0",
           img: "marcela.jpg",
           status: "not-enrolled",
           documents: [
@@ -69,6 +71,7 @@ export class SeducService {
           telefone: "(85) 9999-9999",
           tamanhoFarda: "G",
           tamanhoSapato: "M",
+          nota: "9.0",
           img: "mariana.jpg",
           status: "enrolled",
           documents: [
@@ -96,6 +99,7 @@ export class SeducService {
           telefone: "(85) 9999-9999",
           tamanhoFarda: "G",
           tamanhoSapato: "M",
+          nota: "7.0",
           img: "lucas.jpg",
           status: "not-enrolled",
           documents: [
@@ -111,6 +115,7 @@ export class SeducService {
           telefone: "(85) 9999-9999",
           tamanhoFarda: "G",
           tamanhoSapato: "M",
+          nota: "9.0",
           img: "laura.jpg",
           status: "not-enrolled",
           documents: [

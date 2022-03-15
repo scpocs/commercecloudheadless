@@ -12,15 +12,19 @@ export class StudentComponent implements OnInit {
 
   // student: any;
 
+  formDisabled = true;
+  
   items: MenuItem[] = [
 
     { label: 'Inicio', icon: 'fa fa-home', routerLink: ['home'] },
-    { label: 'Calendario', icon: 'fa fa-calendar' },
-    { label: 'Biblioteca', icon: 'fa fa-book' },
-    { label: 'Disciplinas extracurriculares', icon: 'fa fa-download' },
-    { label: 'Notas', icon: 'fa fa-check-square-o' },
+    { label: 'Calendario', icon: 'fa fa-calendar', routerLink: ['calendario']},
+    { label: 'Biblioteca', icon: 'fa fa-book', routerLink: ['biblioteca']},
+    { label: 'Disciplinas extracurriculares', icon: 'fa fa-download', routerLink: ['disciplinas']},
+    { label: 'Notas', icon: 'fa fa-check-square-o', routerLink: ['notas']},
 
   ];
+
+
 
   constructor(private route: ActivatedRoute, public service: SeducService, private router: Router) {
 

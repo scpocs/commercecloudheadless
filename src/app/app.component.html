@@ -3,10 +3,10 @@
   <nav class="navbar" *ngIf="service.loggedIn">
     <div class="container-fluid">
       <span class="navbar-brand" [routerLink]="['start']">
-        <img class="logo" src="/assets/for.jpg" alt="">
+        <img class="logo" src="assets/for.jpg" alt="">
       </span>
       <form class=" user" (click)="service.userMenu = true">
-        <img src="/assets/{{service.user.img}}" class="img-user-2 img-fluid">
+        <img src="assets/{{service.user.img}}" class="img-user-2 img-fluid">
         <span class="name">{{service.user.name}}</span>
       </form>
     </div>
@@ -19,7 +19,7 @@
 
 <p-sidebar position="right" [(visible)]="service.userMenu">
   <span class="d-flex">
-    <img src="/assets/{{service.user.img}}" class="img-user-8 img-fluid">
+    <img src="assets/{{service.user.img}}" class="img-user-8 img-fluid">
     <span class="user-name">{{service.user.name}}</span>
   </span>
 

@@ -10,7 +10,7 @@ import { SeducService } from '../service/seduc.service';
 })
 export class UserComponent implements OnInit {
 
-
+  formDisabled = true;
 
   items: MenuItem[] = [
     
