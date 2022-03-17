@@ -12,18 +12,21 @@ export class StudentComponent implements OnInit {
 
   // student: any;
 
-  formDisabled = true;
-  
   items: MenuItem[] = [
 
     { label: 'Inicio', icon: 'fa fa-home', routerLink: ['home'] },
-    { label: 'Calendario', icon: 'fa fa-calendar', routerLink: ['calendario']},
-    { label: 'Biblioteca', icon: 'fa fa-book', routerLink: ['biblioteca']},
-    { label: 'Disciplinas extracurriculares', icon: 'fa fa-download', routerLink: ['disciplinas']},
-    { label: 'Notas', icon: 'fa fa-check-square-o', routerLink: ['notas']},
+    { label: 'Calendario', icon: 'fa fa-calendar', routerLink: ['calendario'] },
+    { label: 'Biblioteca', icon: 'fa fa-book', routerLink: ['biblioteca'] },
+    { label: 'Disciplinas extracurriculares', icon: 'fa fa-download', routerLink: ['disciplinas'] },
+    { label: 'Notas', icon: 'fa fa-check-square-o', routerLink: ['notas'] },
 
   ];
 
+
+  formDisabled = true;
+  
+
+// , disabled: this.service.student?.status != 'enrolled'
 
 
   constructor(private route: ActivatedRoute, public service: SeducService, private router: Router) {
@@ -33,13 +36,15 @@ export class StudentComponent implements OnInit {
         this.route.parent?.paramMap.subscribe(params => {
           let id = params.get('id')
           this.service.student = service.getDependentById(id);
+
         })
       });
     }
   }
 
-
-
+  isEnrolled() {
+    return this.service.student?.status != 'enrolled';
+  }
 
   ngOnInit() {
 

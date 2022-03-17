@@ -3,7 +3,7 @@
   <nav class="navbar" *ngIf="service.loggedIn">
     <div class="container-fluid">
       <span class="navbar-brand" [routerLink]="['start']">
-        <img class="logo" src="assets/for.jpg" alt="">
+        <img class="logo" src="assets/for.png" alt="">
       </span>
       <form class=" user" (click)="service.userMenu = true">
         <img src="assets/{{service.user.img}}" class="img-user-2 img-fluid">
@@ -27,8 +27,8 @@
 
   <div class="list-group">
     <span (click)="menuClick('user/'+service.user.id)" class="list-group-item list-group-item-action">Perfil</span>
-    <span class="list-group-item list-group-item-action">Dependentes</span>
-    <span class="list-group-item list-group-item-action">Documentos pendentes</span>
+    <span (click)="menuClick('user/'+service.user.id)" class="list-group-item list-group-item-action">Dependentes</span>
+    <span (click)="menuClick('user/'+service.user.id)" class="list-group-item list-group-item-action">Documentos pendentes</span>
     <span (click)="menuClick('/login')" class="list-group-item list-group-item-action">Sair</span>
   </div>
 

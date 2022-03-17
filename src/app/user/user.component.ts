@@ -16,11 +16,11 @@ export class UserComponent implements OnInit {
     
     { label: 'Inicio', icon: 'fa fa-home', routerLink: ['home'] },
     { label: 'Estudantes', icon: 'fa fa-users', routerLink: ['students'] },
-    { label: 'Calendario', icon: 'fa fa-calendar' },
-    { label: 'Biblioteca', icon: 'fa fa-book' },
-    { label: 'Downloads', icon: 'fa fa-download' },
-    { label: 'Notas', icon: 'fa fa-check-square-o' },
-    { label: 'Mensagens', icon: 'fa fa-envelope-o' },
+    { label: 'Calendario', icon: 'fa fa-calendar' , routerLink: ['students'] },
+    { label: 'Biblioteca', icon: 'fa fa-book' , routerLink: ['students'] },
+    { label: 'Downloads', icon: 'fa fa-download' , routerLink: ['students'] },
+    { label: 'Notas', icon: 'fa fa-check-square-o' , routerLink: ['students'] },
+    { label: 'Mensagens', icon: 'fa fa-envelope-o' , routerLink: ['students'] },
 
   ];
 

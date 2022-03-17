@@ -1,1 +1,18 @@
-<p>notas works!</p>
+<span class="sub-page">
+    Notas Anteriores
+</span>
+
+
+<div class="list-group">
+
+    <span class="list-group-item list-group-item-action" *ngFor="let item of items">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="h4 mb-1">
+                <i class="fa {{item.icon}}" aria-hidden="true"></i>
+                {{item.title}}
+            </h5>
+            <small class="text-muted">{{item.date}}</small>
+        </div>
+        <small class="text-muted">{{item.text}}</small>
+    </span>
+</div>

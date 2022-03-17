@@ -1,1 +1,30 @@
-<p>students works!</p>
+<span class="sub-page">
+    Dependentes
+</span>
+
+<ul class="list-group">
+    <li class="list-group-item student" *ngFor="let item of service.user.dependents"
+        [routerLink]="['/student',item.id]">
+        <img src="assets/{{item.img}}" class="img-user-4 img-fluid">
+
+        <div class="data">
+            <span class="title">
+                {{item.name}}
+            </span>
+            <span class="name">
+
+
+                <div class="alert alert-danger" *ngIf="item.status == 'not-enrolled'">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    Matricula Pendente
+                </div>
+                <div class="alert alert-success" *ngIf="item.status == 'enrolled'">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    Matriculado
+                </div>
+            </span>
+        </div>
+    </li>
+</ul>
+<hr>
+<button type="button" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Cadastrar novo dependente</button>

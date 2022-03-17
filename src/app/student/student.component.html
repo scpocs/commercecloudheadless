@@ -1,12 +1,12 @@
 <div class="container-fluid">
-    <p-menubar [model]="items"></p-menubar>
+    <p-menubar *ngIf="service.student?.status == 'enrolled'" [model]="items"></p-menubar>
     <hr>
 
     <div class="account">
 
         <p class="h6">Responsável:</p>
         <span class="d-flex">
-            <img src="/assets/{{service.student.img}}" class="img-user-8 img-fluid">
+            <img src="assets/{{service.student.img}}" class="img-user-8 img-fluid">
             <div class="data">
                 <div class="row">
                     <div class="col">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="col">
                         <h6 *ngIf="service.student.status == 'enrolled'"><span class="badge bg-success">Matriculado</span></h6>
-                        <h6 *ngIf="service.student.status != 'enrolled'"><span class="badge bg-danger">Matricula Pendente</span></h6>
+                        <h6 *ngIf="service.student.status != 'enrolled'" [routerLink]="['map']"><span class="badge bg-danger">Matricula Pendente</span></h6>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
         </span>
     </div>
 
-
+<hr>
     <router-outlet></router-outlet>
 
 </div>

@@ -1,12 +1,28 @@
+
+
 <div class="container-fluid jumbotron">
     <div class="jumbotron text-center">
         <h4 class="title1">Portal da Educação</h4>
-        <p class="fs-4 fw-light mt-0">Notícias</p>
+        <p class="fs-4 fw-light mt-0">Últimas notícias 2022</p>
 
         <div class="input-group search">
-            <input type="text" class="form-control" placeholder="Pesquise noticias">
+            <input type="text" class="form-control" placeholder="Pesquise Comunicação">
             <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
         </div>
 
     </div>
+</div>
+
+<div class="list-group">
+
+    <span class="list-group-item list-group-item-action" *ngFor="let item of items">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="h4 mb-1">
+                <i class="fa {{item.icon}}" aria-hidden="true"></i>
+                {{item.title}}
+            </h5>
+            <small class="text-muted">{{item.date}}</small>
+        </div>
+        <small class="text-muted">{{item.text}}</small>
+    </span>
 </div>
